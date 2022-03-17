@@ -3,7 +3,7 @@
     "AngularBusyDemo_Specflow_Selenium": {
       "commandName": "Project",
       "environmentVariables": {
-        "Browser": "Chrome"
+        "Browser": "headless"
       }
     }
   }

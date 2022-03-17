@@ -11,10 +11,13 @@ namespace AngularBusyDemo_Specflow_Selenium.Factories
     {
         public IWebDriver CreateDriver()
         {
-            string browser = Environment.GetEnvironmentVariable("Browser" ?? "Chrome");
+            string browser = Environment.GetEnvironmentVariable("Browser" ?? "headless");
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("headless");
             return browser switch
             {
                 "Chrome" => new ChromeDriver(),
+                "headless" => new ChromeDriver(chromeOptions),
                 _ => throw new ArgumentException($"Browser not yet implemented: {browser}"),
             };
         }
